@@ -46,7 +46,7 @@ class Car
 
     public function infomation()
     {
-        echo '車の車種:'. $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color;
+        echo '車の車種:'. $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . 'です。';
     }
 }
 
