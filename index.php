@@ -53,7 +53,17 @@ class Car
 // 以下にCarクラスを継承したTaxiクラスを記述して下さい
 class Taxi extends Car
 {
+    private $name;
+    private $number;
+    private $color;
     private $passenger = 0;
+
+    public function __construct($name, $number, $color)
+    {
+        $this->name = $name;
+        $this->number = $number;
+        $this->color = $color;
+    }
 
     public function pickUp($passenger)
     {
@@ -62,14 +72,12 @@ class Taxi extends Car
 
     public function infomation()
     {
-        parent::infomation();
-        echo '乗車人数は' . $this->passenger . '人です。';
+        echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . '、乗車人数は' . $this->passenger . '人です。';
     }
 
     public function lower($passenger)
     {
-        $this->passenger -= $passenger;
-        if ($this->passenger >= 0) {
+        if (($this->passenger -= $passenger) >= 0) {
             echo $passenger . '人降車しました。';
         } else {
             echo '降車人数に誤りがあります';
