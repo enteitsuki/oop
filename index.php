@@ -3,9 +3,9 @@
 // 以下にCarクラスを定義して、当プログラムを実行した時にエラーがでないようにして下さい。
 class Car
 {
-    private $name;
-    private $number;
-    private $color;
+    public $name;
+    public $number;
+    public $color;
 
     public function __construct($name, $number, $color)
     {
@@ -53,17 +53,7 @@ class Car
 // 以下にCarクラスを継承したTaxiクラスを記述して下さい
 class Taxi extends Car
 {
-    private $name;
-    private $number;
-    private $color;
     private $passenger = 0;
-
-    public function __construct($name, $number, $color)
-    {
-        $this->name = $name;
-        $this->number = $number;
-        $this->color = $color;
-    }
 
     public function pickUp($passenger)
     {
@@ -77,7 +67,8 @@ class Taxi extends Car
 
     public function lower($passenger)
     {
-        if (($this->passenger -= $passenger) >= 0) {
+        if ($this->passenger - $passenger >= 0) {
+            $this->passenger -= $passenger;
             echo $passenger . '人降車しました。';
         } else {
             echo '降車人数に誤りがあります';
