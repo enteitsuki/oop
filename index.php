@@ -3,9 +3,9 @@
 // 以下にCarクラスを定義して、当プログラムを実行した時にエラーがでないようにして下さい。
 class Car
 {
-    public $name;
-    public $number;
-    public $color;
+    private $name;
+    private $number;
+    private $color;
 
     public function __construct($name, $number, $color)
     {
@@ -62,7 +62,7 @@ class Taxi extends Car
 
     public function infomation()
     {
-        echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . '、乗車人数は' . $this->passenger . '人です。';
+        echo '車の車種:' . $this->getName() . '、車体番号:' . $this->getNumber() . '、カラー:' . $this->getColor() . '、乗車人数は' . $this->passenger . '人です。';
     }
 
     public function lower($passenger)
